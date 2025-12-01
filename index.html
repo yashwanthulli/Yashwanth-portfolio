@@ -3,187 +3,292 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veera Reddy S — Portfolio</title>
-  <meta name="description" content="Portfolio — Veera Reddy S | Developer, Engineer, Maker" />
+  <title>Yeshwanth Kumar U — Portfolio</title>
+  <meta name="description" content="Portfolio — Yeshwanth Kumar U | ECE Student & Hardware Builder" />
+  <meta name="author" content="Yeshwanth Kumar U" />
 
-  <!-- Simple styling (self-contained) -->
+  <!-- Embedded styles (single file for ease) -->
   <style>
     :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa6bd; --accent:#7dd3fc; --accent-2:#60a5fa;
+      --bg:#081226;
+      --card:#0b1624;
+      --muted:#9fb0c8;
+      --accent:#7dd3fc;
+      --accent-2:#60a5fa;
       --glass: rgba(255,255,255,0.03);
-      --shadow: 0 6px 20px rgba(2,6,23,0.6);
+      --shadow: 0 12px 36px rgba(2,6,23,0.6);
       --radius: 14px;
+      --gap:18px;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#041025 0%, #071428 100%);color:#e6eef8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-
-    .container{max-width:1100px;margin:40px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#032940}
-    h1{font-size:20px;margin:0}
-    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
-    nav a:hover{color:var(--accent)}
-
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
-    .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);}
-
-    .intro h2{margin:0 0 6px 0;font-size:28px}
-    .intro p{color:var(--muted);line-height:1.5}
-
-    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .skill{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
-
-    .contact-card{display:flex;flex-direction:column;gap:14px;align-items:stretch}
-    .photo{height:200px;border-radius:10px;background:linear-gradient(135deg,#123 0%, #245 100%);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--accent)}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#032940;text-decoration:none;font-weight:600;text-align:center}
-
-    .projects{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .project{display:flex;flex-direction:column;gap:10px}
-    .project h3{margin:0;font-size:16px}
-    .project p{margin:0;color:var(--muted);font-size:13px}
-    .project .tags{display:flex;gap:8px;flex-wrap:wrap}
-
-    footer{margin-top:28px;color:var(--muted);text-align:center;padding:24px}
-
-    /* responsive */
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
-      .container{margin:20px}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#041025 0%, #071428 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
     }
 
-    /* small utility */
-    .row{display:flex;gap:12px;align-items:center}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px;margin:36px auto;padding:22px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#032940}
+    h1.site-title{font-size:18px;margin:0}
+    nav a{color:var(--muted);margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    /* HERO GRID */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:32px;margin-top:22px;align-items:start}
+    .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .35s, box-shadow .35s}
+    .card:hover{transform:translateY(-6px)}
+    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro .subtitle{color:var(--muted);font-size:14px;margin-bottom:12px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .skill{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* right column (profile/contact) */
+    .profile-card{display:flex;flex-direction:column;gap:14px;align-items:stretch}
+    .photo{
+      height:220px;border-radius:12px;background:linear-gradient(135deg,#123 0%, #245 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;
+      border:4px solid rgba(255,255,255,0.03)
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#032940;text-decoration:none;font-weight:700;text-align:center}
+    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:700}
+
+    /* projects area */
+    .projects{margin-top:22px;display:grid;grid-template-columns:1fr;gap:18px}
+    .project .title{margin:0;font-size:20px;color:var(--accent)}
+    .project p{margin:0;color:var(--muted);font-size:14px}
     .muted{color:var(--muted)}
+
+    hr.sep{border:0;border-top:1px solid rgba(255,255,255,0.04);margin:18px 0}
+
+    /* timeline/list style */
+    ul.clean{padding-left:18px;margin:6px 0}
+    ul.clean li{margin:8px 0;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:20px}
+      .photo{height:180px}
+    }
+
+    /* small animation on reveal */
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1; transform:translateY(0)}
+    /* floating icons */
+    .floating-icons{position:fixed;right:28px;bottom:28px;display:flex;flex-direction:column;gap:10px;z-index:60}
+    .ficon{width:46px;height:46px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;color:var(--accent);box-shadow:0 6px 20px rgba(2,6,23,0.4);font-weight:700}
+    .ficon:hover{transform:translateY(-6px)}
+    footer{margin-top:28px;color:var(--muted);text-align:center;padding:20px}
+
+    /* small helpers */
+    .grid-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:680px){ .grid-two{grid-template-columns:1fr} }
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-weight:600}
   </style>
 </head>
 <body>
   <div class="container">
-    <header style="flex-direction:column; text-align:center; gap:16px;">
-  <div class="photo" style="width:130px; height:130px; border-radius:50%; overflow:hidden; margin-bottom:6px;">
-    <img src="Reddy.jpg" alt="Veera Reddy S" style="width:100%; height:100%; object-fit:cover;" />
-  </div>
-  <div class="brand" style="flex-direction:column; text-align:center;">
-    <h1 style="font-size:24px; margin:0;">Veera Reddy S</h1>
-    <div class="muted">ECE 7th Sem • Bellari Institute of Technology and Management<br>USN: 3BR22EC185 • Roll No: 61<br>Role: Hardware Builder (Focuses on the physical assembly, wiring, and sensors.)</div>
-  </div>
-  <nav style="margin-top:10px;">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="https://github.com/saiveerareddy" target="_blank">GitHub</a>
-  </nav>
-</header>
 
-    <section class="hero">
-      <div class="card intro">
-        <h2>Hello — I'm <span style="color:var(--accent)">Veera Reddy S</span></h2>
-        <p>I build embedded systems, robotics, and IoT projects. I enjoy turning hardware ideas into working prototypes and clean web demos. Below you'll find selected projects, contact info, and links to code.</p>
-
-        <div class="skills">
-  <div class="skill">Arduino/ESP 32</div>
-</div>
-          
-
-        <div style="margin-top:16px">
-          <a class="btn" href="#projects">See projects</a>
-        </div>
-
-        <div class="projects" id="projects" style="grid-template-columns:1fr;">
-  <div class="project card" style="padding:24px;">
-    <h2 style="margin:0; font-size:24px; color:var(--accent); font-weight:700;">SMART ARDUINO VOICE CONTROLLED ROVER</h2>
-    <p class="muted" style="margin-top:6px; font-size:15px;">A hardware–focused robotics project integrating voice commands, obstacle detection, and intelligent navigation.</p>
-
-    <hr style="border:0; border-top:1px solid #1d2738; margin:18px 0;" />
-
-    <h3 style="margin:0 0 8px 0; font-size:17px; color:var(--accent-2);">📌 Components Used</h3>
-    <ul class="muted" style="line-height:1.65; font-size:14px; margin-left:16px;">
-      <li>Car Chassis Module</li>
-      <li>4 × Gear Motors</li>
-      <li>Motor Driver Module (L298N)</li>
-      <li>Arduino UNO</li>
-      <li>Bluetooth Module (HC-05)</li>
-      <li>Ultrasonic Sensor</li>
-      <li>Servo Motor</li>
-      <li>Battery & Wiring</li>
-    </ul>
-
-    <hr style="border:0; border-top:1px solid #1d2738; margin:18px 0;" />
-
-    <h3 style="margin:0 0 8px 0; font-size:17px; color:var(--accent-2);">🚀 Project Overview</h3>
-    <p class="muted" style="line-height:1.7; font-size:14px;">
-      The Smart Arduino Voice Controlled Rover responds to voice commands received through a Bluetooth module. It features obstacle detection using an ultrasonic sensor paired with a servo motor to scan left and right for safer navigation. The rover supports voice mode, manual control, and autonomous decision-making.
-    </p>
-
-    <hr style="border:0; border-top:1px solid #1d2738; margin:18px 0;" />
-
-    <h3 style="margin:0 0 8px 0; font-size:17px; color:var(--accent-2);">👨‍🔧 My Role — Hardware Builder</h3>
-    <p class="muted" style="line-height:1.7; font-size:14px;">
-      I handled all physical construction and wiring of the rover. Responsibilities included:
-    </p>
-    <ul class="muted" style="line-height:1.6; font-size:14px; margin-left:16px;">
-      <li>Mounting chassis and installing all motors.</li>
-      <li>Wiring motor driver with Arduino UNO.</li>
-      <li>Integrating ultrasonic sensor + servo system.</li>
-      <li>Managing power connections and cable routing.</li>
-      <li>Hardware testing and validation.</li>
-    </ul>
-
-    <hr style="border:0; border-top:1px solid #1d2738; margin:18px 0;" />
-
-    <h3 style="margin:0 0 8px 0; font-size:17px; color:var(--accent-2);">✨ Key Features</h3>
-    <ul class="muted" style="line-height:1.65; font-size:14px; margin-left:16px;">
-      <li>Bluetooth voice command movement.</li>
-      <li>Automatic obstacle override system.</li>
-      <li>Servo-based directional scanning.</li>
-      <li>Three modes: Voice, Manual, Autonomous.</li>
-    </ul>
-
-    <p class="muted" style="margin-top:16px; font-size:14px; font-weight:600;">USN: 3BR22EC185 • Roll No: 61</p>
-  </div>
-</div>
-</div>
-</div>
-          </div>
-
-          <!-- Add more projects: edit HTML to include your own descriptions -->
+    <!-- header -->
+    <header>
+      <div class="brand">
+        <div class="logo">YK</div>
+        <div>
+          <div class="site-title">Yeshwanth Kumar U</div>
+          <div class="muted" style="font-size:13px">Electronics & Communication Engineering Student</div>
         </div>
       </div>
 
-      <aside class="card contact-card" id="contact">
-       
-        <div>
-          <strong>Email</strong>
-          <div class="muted">saiveerareddy6@gmail.com</div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <!-- add your GitHub if you want -->
+      </nav>
+    </header>
+
+    <!-- hero (left = intro + project list, right = profile/contact) -->
+    <section class="hero" id="about">
+
+      <!-- left column (main content) -->
+      <div class="card intro reveal" data-reveal>
+        <h2>Hello — I'm <span style="color:var(--accent)">Yeshwanth Kumar U</span></h2>
+        <div class="subtitle">USN: <strong>3BR22EC189</strong> • Roll No: <strong>63</strong> • <em>Electronics & Communication Engineering Student</em></div>
+
+        <p class="muted" style="margin-top:8px">
+          I build embedded systems, robotics, and IoT prototypes. I enjoy turning hardware ideas into functional, documented projects — from circuit design and firmware to mechanical assembly and validation.
+        </p>
+
+        <div class="skills" aria-hidden="false" style="margin-top:14px">
+          <div class="skill">Arduino / UNO</div>
+          <div class="skill">Embedded C / Firmware</div>
+          <div class="skill">GRBL & G-code</div>
+          <div class="skill">Stepper / Servo Control</div>
+          <div class="skill">PCB & Wiring</div>
         </div>
-        <div>
-          <strong>Location</strong>
-          <div class="muted">Bellari Institute of Technology and Management<br>USN: 3BR22EC185<br>Roll No: 61</div>
+
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn outline" href="assets/Phase2-Report.pdf" download>Download Project PDF</a>
         </div>
-        <div class="row">
-          <a class="btn" href="mailto:saiveerareddy6gmail.com">Email me</a>
-          <a class="btn" href="https://github.com/saiveerareddy" target="_blank">View GitHub</a>
+
+        <!-- Projects (single: CNC Drawing Machine using Arduino) -->
+        <div class="projects" id="projects" style="margin-top:22px">
+          <article class="project card reveal" data-reveal>
+            <h3 class="title">CNC Drawing Machine using Arduino</h3>
+            <p class="muted" style="margin-top:8px">
+              <strong>Abstract —</strong> A cost-effective 2D CNC drawing machine implemented using Arduino Uno, salvaged DVD-drive stepper motors, GRBL firmware, and open-source tools (Inkscape, Universal G-code Sender). The goal is to provide an educational, modular, and low-cost plotter suitable for prototyping and learning.
+            </p>
+
+            <hr class="sep" />
+
+            <h4 style="margin:0 0 8px 0; color:var(--accent-2)">📌 Components Used</h4>
+            <ul class="clean">
+              <li>Car chassis module / frame and mechanical assembly parts</li>
+              <li>DVD drive stepper motors (repurposed)</li>
+              <li>Motor driver module (e.g., L298N or compatible driver)</li>
+              <li>Arduino UNO (microcontroller)</li>
+              <li>Bluetooth module (HC-05) / optional serial interface</li>
+              <li>Ultrasonic sensor for obstacle detection</li>
+              <li>Servo motor for pen-lift (Z axis)</li>
+              <li>Battery pack and wiring / power management</li>
+            </ul>
+
+            <hr class="sep" />
+
+            <h4 style="margin:0 0 8px 0; color:var(--accent-2)">🚀 Project Overview</h4>
+            <p class="muted">
+              The CNC Drawing Machine interprets G-code to create vector sketches on a 2D plane. Phase 2 focused on validating hardware-software integration, configuring GRBL on Arduino, mechanical assembly, motor interfacing, and preliminary accuracy tests. The design emphasizes modularity and reuse of e-waste parts to keep costs low.
+            </p>
+
+            <hr class="sep" />
+
+            <div class="grid-two" style="margin-top:8px">
+              <div>
+                <h4 style="color:var(--accent-2); margin:0 0 8px 0">👨‍🔧 My Role — Hardware Builder</h4>
+                <ul class="clean">
+                  <li>Mechanical assembly: chassis, motor mounts, and cable routing</li>
+                  <li>Wiring: motor drivers, Arduino connections, sensors, and power</li>
+                  <li>Sensor integration: ultrasonic & servo for pen up/down</li>
+                  <li>Testing: calibration of stepper motion and G-code execution</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 style="color:var(--accent-2); margin:0 0 8px 0">✨ Key Features</h4>
+                <ul class="clean">
+                  <li>Interprets standard G-code for 2D plotting</li>
+                  <li>Uses GRBL firmware on Arduino for motion control</li>
+                  <li>Servo-driven pen lift for precise pen placement</li>
+                  <li>Repurposed components for cost-effectiveness and sustainability</li>
+                  <li>Modular design for future upgrades (laser, multicolor heads)</li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="sep" />
+
+            <h4 style="color:var(--accent-2); margin:0 0 8px 0">📈 Expected Outcomes & Future Scope</h4>
+            <p class="muted" style="margin-bottom:8px">
+              Expected outcomes included a working prototype capable of accurate vector drawing, documentation, and performance metrics. Future improvements: laser engraving module, closed-loop feedback (camera/optical encoders), NEMA stepper upgrade, wireless control, and GUI improvements.
+            </p>
+
+            <p class="muted" style="margin-top:10px; font-weight:700">Project Team (Phase-II):</p>
+            <ul class="clean">
+              <li>Aditya Singh — 3BR22EC004</li>
+              <li>Hritik Kumar — 3BR22EC056</li>
+              <li>Nethra B — 3BR22EC109</li>
+              <li><strong>Yeshwanth Kumar U — 3BR22EC189</strong></li>
+            </ul>
+
+            <p class="muted" style="margin-top:12px; font-size:13px">Project guide: Dr. Prabhakar K</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- right column (profile & contact) -->
+      <aside class="profile-card card reveal" data-reveal>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="photo" aria-hidden="false">
+            <!-- Put your profile photo in assets/Yashwanth.jpg -->
+            <img src="assets/Yashwanth.jpg" alt="Yeshwanth Kumar U — Profile photo">
+          </div>
+
+          <div>
+            <div style="font-weight:700; font-size:16px">Yeshwanth Kumar U</div>
+            <div class="muted" style="font-size:13px;margin-top:4px">Electronics & Communication Engineering Student — BITM, Ballari</div>
+          </div>
+
+          <div>
+            <strong>Contact</strong>
+            <div class="muted" style="margin-top:6px;font-size:14px">Email: <span id="emailSpan">replace-with-your-email@example.com</span></div>
+            <div class="muted" style="margin-top:4px;font-size:14px">Location: Ballari Institute of Technology & Management</div>
+            <div class="muted" style="margin-top:6px;font-size:13px">USN: <strong>3BR22EC189</strong> • Roll No: <strong>63</strong></div>
+          </div>
+
+          <div style="display:flex;gap:10px;">
+            <a class="btn" href="mailto:replace-with-your-email@example.com">Email Me</a>
+            <a class="btn outline" href="assets/Phase2-Report.pdf" download>Project PDF</a>
+          </div>
+
+          <div style="margin-top:6px">
+            <div class="chip">Arduino</div>
+            <div class="chip">Embedded Systems</div>
+            <div class="chip">Robotics</div>
+          </div>
         </div>
       </aside>
     </section>
 
     <footer>
-      <div class="muted">© <span id="year"></span> Veera Reddy S — Built with HTML & a little CSS</div>
+      <div class="muted">© <span id="year"></span> Yeshwanth Kumar U — Built with HTML & CSS • Place your files in <code>assets/</code></div>
     </footer>
+
   </div>
 
+  <!-- floating quick icons -->
+  <div class="floating-icons" aria-hidden="true">
+    <div class="ficon" title="Top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
+    <div class="ficon" title="Projects" onclick="location.href='#projects'">🛠</div>
+    <div class="ficon" title="Contact" onclick="location.href='#contact'">✉️</div>
+  </div>
+
+  <!-- small interactive script -->
   <script>
-    // small interactive touches
+    // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Example: keyboard shortcuts to navigate (useful while demoing)
+    // scroll reveal
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); io.unobserve(entry.target); }
+      });
+    }, {threshold: 0.12});
+    reveals.forEach(r => io.observe(r));
+
+    // keyboard quick nav
     document.addEventListener('keydown', (e)=>{
       if(e.key === '1') location.href = '#about';
       if(e.key === '2') location.href = '#projects';
       if(e.key === '3') location.href = '#contact';
+    });
+
+    // small mobile-friendly fallback for image if not found
+    const img = document.querySelector('.photo img');
+    img.addEventListener('error', () => {
+      img.src = 'https://via.placeholder.com/600x600?text=Profile';
     });
   </script>
 </body>
