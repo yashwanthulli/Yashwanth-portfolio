@@ -3,219 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yashwanth Kumar | Portfolio</title>
+<title>Yeshwanth Kumar | Portfolio</title>
 
 <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-
     body {
-        background: #050505;
-        color: white;
-        scroll-behavior: smooth;
+        margin:0;
+        font-family: 'Segoe UI', sans-serif;
+        background:#f5f5f5;
+        color:#222;
     }
-
-    /* NAVIGATION */
     nav {
-        width:100%;
-        padding:18px 50px;
         display:flex;
         justify-content:space-between;
         align-items:center;
-        position:fixed;
+        padding:18px 40px;
+        font-size:17px;
+        background:white;
+        border-bottom:1px solid #ddd;
+        position:sticky;
         top:0;
-        background:#000000cc;
-        backdrop-filter:blur(12px);
         z-index:100;
-        border-bottom:1px solid #00eaff44;
     }
-
-    /* PROFILE PHOTO */
-    .profile-pic {
-        width:55px;
-        height:55px;
-        border-radius:50%;
-        border:2px solid #00eaff;
-        object-fit:cover;
-        box-shadow:0 0 10px #00eaff;
-    }
-
-    .name {
+    nav .left {
         display:flex;
         align-items:center;
-        gap:12px;
+        gap:10px;
+        font-weight:600;
+    }
+    nav .dot {
+        width:12px;
+        height:12px;
+        background:#59d4c8;
+        border-radius:50%;
+    }
+    nav .menu a {
+        margin-left:28px;
+        text-decoration:none;
+        color:#222;
+    }
+    nav .menu a:hover {
+        text-decoration:underline;
     }
 
-    .name h1 {
-        font-size:22px;
-        color:#00eaff;
-        letter-spacing:1px;
-    }
-
-    nav ul {
+    .container {
+        max-width:1200px;
+        margin:auto;
+        padding:60px 40px;
         display:flex;
-        list-style:none;
-        gap:35px;
+        gap:70px;
+        align-items:center;
     }
 
-    nav ul li a {
-        text-decoration:none;
-        font-size:18px;
-        color:#bbb;
+    .profile-img {
+        width:330px;
+        height:330px;
+        border-radius:50%;
+        object-fit:cover;
+        border:3px solid #ddd;
     }
 
-    nav ul li a:hover, .active {
-        color:#00eaff !important;
+    h1 {
+        font-size:46px;
+        margin-bottom:10px;
     }
-
-    section {
-        padding:130px 50px;
-        min-height:100vh;
-    }
-
-    /* HERO */
-    .home {
-        text-align:center;
-    }
-
-    .home h2 {
-        font-size:55px;
-        font-weight:700;
-    }
-
-    .home h2 span {
-        color:#00eaff;
-    }
-
-    .usn {
-        margin-top:10px;
-        font-size:20px;
-        color:#00eaff;
+    h2 {
+        margin-bottom:10px;
+        font-size:22px;
         font-weight:600;
     }
-
-    .btn {
-        display:inline-block;
-        margin-top:25px;
-        padding:12px 28px;
+    p {
         font-size:18px;
-        font-weight:600;
-        background:#00eaff;
-        color:black;
-        border-radius:30px;
+        line-height:1.6;
+        max-width:500px;
+    }
+
+    /* Circular Buttons */
+    .circle-buttons {
+        display:flex;
+        gap:20px;
+        margin-top:30px;
+    }
+    .circle-buttons a {
+        width:120px;
+        height:120px;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         text-decoration:none;
+        color:#222;
+        font-weight:600;
+        font-size:17px;
         transition:0.3s;
     }
-
-    .btn:hover {
-        background:white;
+    .circle-buttons a:hover {
+        transform:scale(1.05);
     }
+    .resume { background:#c7e88a; }
+    .research { background:#f4bf57; }
+    .outreach { background:#9fe6ff; }
+    .personal { background:#d4d4d4; }
 
-    .title {
-        font-size:40px;
-        margin-bottom:20px;
-        color:#00eaff;
-        font-weight:700;
-    }
-
-    /* GLASSMORPHIC PROJECT BOX */
-    .project-box {
-        background:rgba(0, 29, 41, 0.35);
-        border:1px solid #00eaff55;
-        padding:25px;
-        border-radius:16px;
-        margin-top:20px;
-        backdrop-filter:blur(10px);
-        box-shadow:0 0 25px #00eaff33;
-        animation:fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        from { opacity:0; transform:translateY(20px); }
-        to { opacity:1; transform:translateY(0); }
-    }
-
+    /* Footer */
     footer {
-        text-align:center;
-        padding:20px;
-        background:#000;
-        color:#777;
         margin-top:40px;
-        border-top:1px solid #00eaff33;
+        padding:30px 40px;
+        border-top:1px solid #ccc;
+        display:flex;
+        justify-content:space-between;
+        background:white;
+        font-size:16px;
     }
-
+    footer div a { 
+        color:#005eff;
+        text-decoration:none;
+    }
+    footer div a:hover {
+        text-decoration:underline;
+    }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION WITH PHOTO -->
+<!-- NAVBAR -->
 <nav>
-    <div class="name">
-        <img src="Yashwanth.jpg" class="profile-pic">
-        <h1>Yeshwanth Kumar</h1>
+    <div class="left">
+        <div class="dot"></div>
+        <span>Yeshwanth Kumar — Electronics & Communication Engineer</span>
     </div>
-
-    <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="menu">
+        <a href="#resume">Resume</a>
+        <a href="#research">Project</a>
+        <a href="#outreach">Skills</a>
+        <a href="#personal">Personal</a>
+    </div>
 </nav>
 
-<!-- HOME -->
-<section id="home" class="home">
-    <h2>Hello, I'm <span>Yeshwanth Kumar</span></h2>
-    <p class="usn">USN: 3BR22EC189</p>
-    <p>Electronics & Communication Engineer | Innovator | CNC Developer</p>
-    <a href="#projects" class="btn">Explore My Work</a>
-</section>
+<!-- MAIN CONTENT -->
+<div class="container">
+    <img src="your-photo.jpg" class="profile-img">
 
-<!-- ABOUT -->
-<section id="about">
-    <h1 class="title">About Me</h1>
-    <p style="font-size:20px; line-height:1.6;">
-        I am an aspiring Electronics & Communication Engineer with strong interests in 
-        embedded systems, hardware prototyping, automation and CNC machine development.
-        I love creating low-cost engineering solutions that solve real-world problems.
-    </p>
-</section>
+    <div class="right">
+        <h1>Yeshwanth Kumar</h1>
+        <h2>A Bit About Me</h2>
 
-<!-- PROJECTS -->
-<section id="projects">
-    <h1 class="title">My Projects</h1>
-
-    <div class="project-box">
-        <h2 style="color:#00eaff;">CNC Drawing Machine using Arduino</h2>
-        <p style="margin-top:10px; font-size:18px;">
-            A low-cost CNC plotter developed using Arduino UNO, DVD stepper motors,
-            GRBL firmware, and a servo motor for Z-axis control. It can plot 2D shapes
-            and text with precision using G-code generated from Inkscape.
+        <p>
+            I am a student from the Electronics & Communication Engineering Department with
+            a strong interest in embedded systems, automation, and hardware prototyping.  
+            I designed and developed a complete **CNC Drawing Machine using Arduino**
+            using recycled DVD motors, GRBL firmware, and open-source G-code tools.
         </p>
 
-        <h3 style="margin-top:15px; color:#00eaff;">Components Used:</h3>
-        <p style="line-height:1.7; font-size:18px;">
-            • Arduino UNO <br>
-            • DVD Stepper Motors (X & Y Axis) <br>
-            • Servo Motor (Pen Up/Down) <br>
-            • Motor Driver Module <br>
-            • GRBL Firmware <br>
-            • Recycled Frame Materials <br>
-        </p>
-
-        <a href="Phasee-2 Report.pdf" class="btn" style="margin-top:20px;">Download Complete Report</a>
+        <!-- CIRClE BUTTONS -->
+        <div class="circle-buttons">
+            <a id="resume" class="resume" href="Phasee-2 Report.pdf">Resume</a>
+            <a id="research" class="research" href="#project">Project</a>
+            <a id="outreach" class="outreach" href="#skills">Skills</a>
+            <a id="personal" class="personal" href="#contact">Personal</a>
+        </div>
     </div>
-</section>
+</div>
+
+<!-- PROJECT SECTION -->
+<div class="container" id="project" style="flex-direction:column; text-align:left;">
+    <h1>CNC Drawing Machine Using Arduino</h1>
+    <p>
+        This project aims to build a low-cost CNC drawing/plotting machine using Arduino UNO,  
+        DVD stepper motors, GRBL firmware, and a servo motor for pen control.  
+        It interprets G-code generated from Inkscape and produces accurate 2D vector drawings.
+
+        <br><br>
+        <b>Components Used:</b><br>
+        • Arduino UNO<br>
+        • DVD Stepper Motors (X & Y Axis)<br>
+        • Servo Motor (Z-axis – Pen Up/Down)<br>
+        • L293D or A4988 Motor Driver<br>
+        • GRBL Firmware<br>
+        • Recycled DVD Drive Mechanism<br>
+        • Inkscape + Universal G-code Sender (UGS)
+        <br><br>
+        <a href="Phasee-2 Report.pdf" style="color:#005eff; text-decoration:none;">Download full project report →</a>
+    </p>
+</div>
+
+<!-- SKILLS -->
+<div class="container" id="skills" style="flex-direction:column;">
+    <h1>Skills</h1>
+    <p>
+        • Arduino Programming<br>
+        • Embedded Systems<br>
+        • CNC Machine Design<br>
+        • Motor Drivers & Control<br>
+        • G-code & GRBL<br>
+        • Hardware Prototyping<br>
+        • PCB Basics<br>
+        • Python Basics<br>
+    </p>
+</div>
 
 <!-- CONTACT -->
-<section id="contact">
-    <h1 class="title">Contact Me</h1>
-    <p style="font-size:20px;">📧 Email : yourmail@gmail.com</p>
-    <p style="font-size:20px;">💻 GitHub : github.com/yourprofile</p>
-</section>
+<div class="container" id="contact" style="flex-direction:column;">
+    <h1>Personal & Contact</h1>
+    <p>
+        Email: yourmail@gmail.com<br>
+        GitHub: https://github.com/yourprofile<br>
+        USN: 3BR22EC189
+    </p>
+</div>
 
+<!-- FOOTER -->
 <footer>
-    © 2025 Yeshwanth Kumar | All Rights Reserved
+    <div>Email<br>yourmail@gmail.com</div>
+    <div>GitHub<br><a href="#">github.com/yourprofile</a></div>
+    <div>Project Report<br><a href="Phasee-2 Report.pdf">Download</a></div>
+    <div>© 2025 | Created for Yeshwanth Kumar</div>
 </footer>
 
 </body>
